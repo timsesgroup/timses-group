@@ -1,0 +1,6 @@
+{
+  "name": "Ex TIMSES",
+  "description": "Mobile-friendly SaaS web app for real-time document data entry synced to Google Sheets with Google Apps Script integration, auto email notifications, and daily analytics dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

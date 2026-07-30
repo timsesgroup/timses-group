@@ -1,0 +1,11 @@
+{
+  "spreadsheetId": "1YOdn-LDDYayVTqhb2KeXJ2OPnZdwhi4mrDZRKeK_FtY",
+  "sheetName": "Sheet1",
+  "appsScriptUrl": "https://script.google.com/macros/s/AKfycbzVdcp6V8kXlOrIJlgTXFFAOYOS6NyrvvP17g2EDkjKM2vvTz9MUIXh-VTiOKpmpLKlIA/exec",
+  "defaultNotificationEmail": "geminitimses@gmail.com",
+  "enableAutoEmail": true,
+  "emailSubjectTemplate": "[Ex TIMSES] Postingan Konten Baru: {title} ({category})",
+  "emailBodyTemplate": "Notifikasi otomatis postingan konten.",
+  "autoSyncToSheet": true,
+  "senderName": "Ex TIMSES"
+}

@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .bg-coinbase {
+    background-color: #0052FF;
+  }
+  .text-coinbase {
+    color: #0052FF;
+  }
+  .border-coinbase {
+    border-color: #0052FF;
+  }
+  .bg-coinbase-dark {
+    background-color: #0A0B0D;
+  }
+  .glass-jelly {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 82, 255, 0.12);
+    box-shadow: 0 10px 30px -10px rgba(0, 82, 255, 0.08);
+  }
+  .glass-jelly-card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(224, 231, 255, 0.8);
+    box-shadow: 0 12px 32px -8px rgba(0, 82, 255, 0.06);
+  }
+  .jelly-glow {
+    box-shadow: 0 0 25px -5px rgba(0, 82, 255, 0.25);
+  }
+}
+
+/* Smooth rounded corners and custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0052FF;
+}
