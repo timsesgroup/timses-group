@@ -18,7 +18,7 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, health, onSyncSheet, i
         {/* Brand & Logo */}
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-2xl flex items-center justify-center shadow-lg shadow-[#0052FF]/30 font-bold text-xl transition-transform hover:scale-105 overflow-hidden">
-            <img src="https://storage.googleapis.com/aistudio-chat-prod-b-028f09/49c86915-77da-4e5c-ab4e-a97920ab7183/87cb6002-39c0-43f1-b4ed-3e75e9f82ce6/image.png" alt="Ex TIMSES Logo" className="w-full h-full object-cover" />
+            <img src="/logo.png" alt="Ex TIMSES Logo" className="w-full h-full object-cover" />
           </div>
           <div>
             <div className="flex items-center gap-2">
