@@ -172,7 +172,7 @@ async function startServer() {
       // Respond immediately to UI
       res.json({
         success: true,
-        message: 'Konten berhasil tersimpan! Proses sinkronisasi berjalan di latar belakang.',
+        message: 'Akun berhasil tersimpan! Proses sinkronisasi berjalan di latar belakang.',
         entry: newEntry
       });
 
@@ -193,7 +193,7 @@ async function startServer() {
         }
 
         // 2. Google Apps Script Web App Sync (Backup / Secondary Engine)
-        if (settings.appsScriptUrl) {
+        if (settings.appsScriptUrl && !sheetSyncResult.success) {
           try {
             const fetchRes = await fetch(settings.appsScriptUrl, {
               method: 'POST',
@@ -281,6 +281,7 @@ async function startServer() {
 
       // Sync to Google Sheets and Apps Script in the background
       (async () => {
+        let apiSuccess = false;
         if (settings.autoSyncToSheet && settings.spreadsheetId) {
           try {
             if (oldEntry && oldEntry.website !== updated.website) {
@@ -291,6 +292,7 @@ async function startServer() {
                 entries[index] = updated;
                 saveLocalEntries(entries);
               }
+              apiSuccess = appendRes.success;
             } else {
               const updateRes = await updateGoogleSheetRow(settings.spreadsheetId, updated, oldEntry);
               if (updateRes.rowNumber) {
@@ -298,13 +300,14 @@ async function startServer() {
                 entries[index] = updated;
                 saveLocalEntries(entries);
               }
+              apiSuccess = updateRes.success;
             }
           } catch (e: any) {
             console.warn('[Sheet Update Warning]:', e.message);
           }
         }
 
-        if (settings.appsScriptUrl) {
+        if (settings.appsScriptUrl && !apiSuccess) {
           try {
             if (oldEntry && oldEntry.website !== updated.website) {
               await fetch(settings.appsScriptUrl, {
@@ -362,10 +365,13 @@ async function startServer() {
       // 2 & 3. Sync to Google Sheet and Apps Script in the background
       (async () => {
         let sheetWarning = '';
+        let apiSuccess = false;
         if (settings.spreadsheetId) {
           try {
             const sheetResult = await deleteGoogleSheetRow(settings.spreadsheetId, targetEntry);
-            if (!sheetResult.success || sheetResult.error) {
+            if (sheetResult.success) {
+              apiSuccess = true;
+            } else if (sheetResult.error) {
               sheetWarning = sheetResult.error || 'Data di Google Sheet mungkin tidak terhapus.';
               console.warn('[Google Sheet Delete Warning]:', sheetWarning);
             }
@@ -375,7 +381,7 @@ async function startServer() {
           }
         }
 
-        if (settings.appsScriptUrl) {
+        if (settings.appsScriptUrl && !apiSuccess) {
           try {
             await fetch(settings.appsScriptUrl, {
               method: 'POST',
@@ -661,7 +667,7 @@ function doPost(e) {
     // Buat Header jika sheet kosong (7 Kolom)
     if (sheet.getLastRow() === 0) {
       sheet.appendRow([
-        'Konten',
+        'Akun',
         'PLATFORM',
         'ID REFF',
         'Status',
@@ -788,7 +794,7 @@ function doPost(e) {
       try {
         const subject = "[Ex TIMSES] Akun: " + (doc.konten || 'BRANDING') + " (" + (doc.platform || 'INSTAGRAM') + ")";
         const body = "Halo,\\n\\nData akun baru berhasil diinput via Web SaaS:\\n\\n" +
-          "- Konten: " + (doc.konten || '-') + "\\n" +
+          "- Akun: " + (doc.konten || '-') + "\\n" +
           "- Platform: " + (doc.platform || '-') + "\\n" +
           "- ID REFF: " + (doc.idReff || '-') + "\\n" +
           "- Status: " + (doc.status || 'Dipublikasikan') + "\\n" +

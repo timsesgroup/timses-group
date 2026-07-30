@@ -143,7 +143,7 @@ export async function appendToGoogleSheet(
 
       if (!checkRes.data.values || checkRes.data.values.length === 0) {
         const headers = [
-          'Konten',
+          'Akun',
           'PLATFORM',
           'ID REFF',
           'Status',
@@ -691,9 +691,9 @@ export async function sendNotificationEmail(
 
 Notifikasi otomatis entri akun baru telah berhasil disimpan ke Google Sheets!
 
-📱 RINCIAN POSTINGAN KONTEN:
+📱 RINCIAN POSTINGAN AKUN:
 ------------------------------------------
-• Jenis Konten: ${entry.konten}
+• Jenis Akun: ${entry.konten}
 • Platform: ${entry.platform}
 • ID REFF / User: ${entry.idReff}
 • Status Publikasi: ${entry.status}
