@@ -758,7 +758,7 @@ export const AnalyticsDashboard: React.FC<AnalyticsDashboardProps> = ({
         <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-3">
           <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
             <Tag className="w-4 h-4 text-emerald-600" />
-            Breakdown Jenis Konten - {formatMonthLabel(selectedMonth)}
+            Breakdown Jenis Akun - {formatMonthLabel(selectedMonth)}
           </h3>
           <div className="space-y-2">
             {contentTypeStats.length === 0 ? (

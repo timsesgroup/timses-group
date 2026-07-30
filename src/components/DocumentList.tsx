@@ -324,13 +324,13 @@ export const DocumentList: React.FC<DocumentListProps> = ({
             <option value="FACEBOOK PRO">FACEBOOK PRO</option>
           </select>
 
-          {/* Konten Filter */}
+          {/* Akun Filter */}
           <select
             value={selectedKonten}
             onChange={e => setSelectedKonten(e.target.value)}
             className="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs text-slate-900 bg-white focus:border-emerald-500 outline-none transition"
           >
-            <option value="ALL">Semua Jenis Konten</option>
+            <option value="ALL">Semua Jenis Akun</option>
             <option value="BRANDING">BRANDING</option>
             <option value="OVERLAY">OVERLAY</option>
           </select>
@@ -398,7 +398,7 @@ export const DocumentList: React.FC<DocumentListProps> = ({
                     <table className="w-full text-left border-collapse">
                       <thead>
                         <tr className="bg-slate-50/50 border-b border-slate-200 text-[10px] font-bold text-slate-500 uppercase tracking-wider">
-                          <th className="py-2.5 px-4">Konten (Kolom A)</th>
+                          <th className="py-2.5 px-4">Akun (Kolom A)</th>
                           <th className="py-2.5 px-4">Platform (Kolom B)</th>
                           <th className="py-2.5 px-4">Status (Kolom D)</th>
                           <th className="py-2.5 px-4">Tanggal Akun</th>
@@ -474,7 +474,7 @@ export const DocumentList: React.FC<DocumentListProps> = ({
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr className="bg-slate-50 border-b border-slate-200 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
-                    <th className="py-3 px-4">Konten (Kolom A)</th>
+                    <th className="py-3 px-4">Akun (Kolom A)</th>
                     <th className="py-3 px-4">Platform (Kolom B)</th>
                     <th className="py-3 px-4">ID REFF (Kolom C)</th>
                     <th className="py-3 px-4">Status (Kolom D)</th>
@@ -629,7 +629,7 @@ export const DocumentList: React.FC<DocumentListProps> = ({
               
               <div className="grid grid-cols-2 gap-3 bg-slate-50 p-3 rounded-xl border border-slate-200">
                 <div>
-                  <span className="text-[10px] text-slate-400 block uppercase font-bold">Jenis Konten (Kolom A)</span>
+                  <span className="text-[10px] text-slate-400 block uppercase font-bold">Jenis Akun (Kolom A)</span>
                   <span className="font-bold text-slate-900">{selectedDoc.konten}</span>
                 </div>
                 <div>
@@ -780,7 +780,7 @@ export const DocumentList: React.FC<DocumentListProps> = ({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block font-bold text-slate-700 mb-1">
-                    Jenis Konten (Kolom A)
+                    Jenis Akun (Kolom A)
                   </label>
                   <select
                     value={editingDoc.konten}

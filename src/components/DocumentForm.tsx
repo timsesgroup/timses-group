@@ -188,7 +188,7 @@ export const DocumentForm: React.FC<DocumentFormProps> = ({ settings, selectedWe
           </div>
           <h2 className="text-xl font-black tracking-tight text-white">Input Akun Real-Time</h2>
           <p className="text-xs text-slate-300 mt-0.5 font-medium">
-            Formulir otomatis disesuaikan dengan struktur Google Sheet: Konten, PLATFORM, ID REFF, Status, Tanggal akun, LINK PROFIL, &amp; CATATAN.
+            Formulir otomatis disesuaikan dengan struktur Google Sheet: Akun, PLATFORM, ID REFF, Status, Tanggal akun, LINK PROFIL, &amp; CATATAN.
           </p>
         </div>
       </div>
@@ -314,14 +314,14 @@ export const DocumentForm: React.FC<DocumentFormProps> = ({ settings, selectedWe
             <div>
               <label className="block text-xs font-bold text-slate-800 mb-1 flex items-center gap-1">
                 <Tag className="w-3.5 h-3.5 text-[#0052FF]" />
-                Jenis Konten <span className="text-rose-500">*</span>
+                Jenis Akun <span className="text-rose-500">*</span>
               </label>
               <select
                 value={formData.konten || ''}
                 onChange={e => handleChange('konten', e.target.value)}
                 className="w-full px-4 py-3 rounded-2xl border border-blue-200/80 focus:border-[#0052FF] focus:ring-2 focus:ring-[#0052FF]/20 text-sm font-bold text-slate-900 outline-none transition bg-white"
               >
-                <option value="">-- Pilih Jenis Konten --</option>
+                <option value="">-- Pilih Jenis Akun --</option>
                 {CONTENT_TYPES.map(type => (
                   <option key={type} value={type}>{type}</option>
                 ))}

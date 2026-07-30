@@ -500,7 +500,7 @@ export const IdReffManager: React.FC<IdReffManagerProps> = ({
                     <div className="flex items-center justify-between px-1">
                       <h4 className="text-xs font-extrabold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
                         <Tag className="w-4 h-4 text-emerald-600" />
-                        Daftar Konten Akun ({items.length}) untuk ID: <span className="text-slate-900 font-mono text-xs font-bold">{id}</span>
+                        Daftar Akun ({items.length}) untuk ID: <span className="text-slate-900 font-mono text-xs font-bold">{id}</span>
                       </h4>
                     </div>
 
@@ -672,7 +672,7 @@ export const IdReffManager: React.FC<IdReffManagerProps> = ({
                 </div>
 
                 <div>
-                  <label className="font-bold text-slate-700 block mb-1">Jenis Konten</label>
+                  <label className="font-bold text-slate-700 block mb-1">Jenis Akun</label>
                   <select
                     value={editingEntry.konten}
                     onChange={e => setEditingEntry({ ...editingEntry, konten: e.target.value })}
