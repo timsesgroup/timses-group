@@ -424,7 +424,7 @@ export const IdReffManager: React.FC<IdReffManagerProps> = ({
             type="text"
             value={searchTerm}
             onChange={e => setSearchTerm(e.target.value)}
-            placeholder="Cari nama ID REFF / konten..."
+            placeholder="Cari nama ID REFF / akun..."
             className="w-full pl-9 pr-3 py-2 rounded-xl border border-slate-300 text-xs text-slate-900 focus:border-emerald-500 outline-none transition"
           />
         </div>

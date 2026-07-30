@@ -503,7 +503,7 @@ export const AnalyticsDashboard: React.FC<AnalyticsDashboardProps> = ({
           </div>
           <div className="flex items-baseline gap-2">
             <span className="text-2xl sm:text-3xl font-extrabold text-slate-900">{totalPeriodEntries}</span>
-            <span className="text-xs text-slate-500 font-medium">konten</span>
+            <span className="text-xs text-slate-500 font-medium">akun</span>
           </div>
           <div className="mt-2 text-[11px] text-emerald-600 font-medium flex items-center gap-1">
             <ArrowUpRight className="w-3.5 h-3.5 text-emerald-600" />
@@ -521,7 +521,7 @@ export const AnalyticsDashboard: React.FC<AnalyticsDashboardProps> = ({
           </div>
           <div className="flex items-baseline gap-2">
             <span className="text-2xl sm:text-3xl font-extrabold text-slate-900">{publishedCount}</span>
-            <span className="text-xs text-slate-500 font-medium">konten</span>
+            <span className="text-xs text-slate-500 font-medium">akun</span>
           </div>
           <div className="mt-2 text-[11px] text-teal-600 font-medium">
             Tingkat Sukses: <strong>{publishedRate}%</strong>
@@ -538,7 +538,7 @@ export const AnalyticsDashboard: React.FC<AnalyticsDashboardProps> = ({
           </div>
           <div className="flex items-baseline gap-2">
             <span className="text-2xl sm:text-3xl font-extrabold text-amber-600">{pendingCount}</span>
-            <span className="text-xs text-slate-500 font-medium">konten</span>
+            <span className="text-xs text-slate-500 font-medium">akun</span>
           </div>
           <div className="mt-2 text-[11px] text-amber-600 font-medium">
             Status pending / ditangguhkan
@@ -606,7 +606,7 @@ export const AnalyticsDashboard: React.FC<AnalyticsDashboardProps> = ({
                   <span className="text-[10px] font-black text-slate-500 uppercase block tracking-wider">Total Sosmed</span>
                   <div className="flex items-baseline gap-1 mt-1">
                     <span className="text-xl font-black text-[#0052FF]">{stat.totalSosmed}</span>
-                    <span className="text-[10px] text-slate-500 font-bold">konten</span>
+                    <span className="text-[10px] text-slate-500 font-bold">akun</span>
                   </div>
                 </div>
               </div>
